@@ -9,12 +9,13 @@
 </head>
 
 <body onload="startTime()">
-	<div class="bg-danger section section-fill-height text-xs-center">
+	  <div class="section section-fill-height section-opaque-dark text-xs-center">
+    <div class="background-image" style="background-image : url('https://unsplash.it/768/1366/?random')"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h1 class="display-1 pi-draggable pi-item title" draggable="true" id="time">COLOR COVER</h1>
-					<p class="lead pi-draggable pi-item subtitle">Time is precious. Get Moving.</p>
+					<h1 class="display-1 pi-draggable pi-item title text-inverse" draggable="true" id="time">COLOR COVER</h1>
+					<p onload="displayQuote()" class="lead pi-draggable text-inverse pi-item subtitle" id="quote">Time is precious. Get Moving.</p>
 					<style>
 					.title, .subtitle {
 						font-family: "Lato", Helvetica, sans-serif;
@@ -30,6 +31,7 @@
 	<script type="text/javascript">
 	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+	var flag = 0;
 	function startTime() {
 		var d = new Date();
 
@@ -50,9 +52,26 @@
 		var x = document.getElementById("time");
 		// x.innerHTML = day + " " + hr + ":" + min + ampm + " " + date + " " + month + " " + year;
 		x.innerHTML = day + " " + hr + ":" + min + ":" + sec +  " " + ampm;
-		var t = setTimeout(startTime, 500);
+		if(flag != 1) {
+			displayQuote();
+			flag = 1;
+		}
+		var t = setInterval(startTime, 1000);
 	}
 
+	function displayQuote() {
+		var x = document.getElementById("quote");
+		var quotes = [
+					"\"Silence the angry man with love. Silence the liar with truth.\" <br> - Buddha",
+					"\"The only thing standing between you and your goal is <br> the story you keep telling yourself as to why you can't achieve it.\" <br> - Jordan Belfort",
+					"\"Most people quit because they look how far they have to go, <br> not how far they have come.\"",
+					"\"Everything around you that you call life was made up by people, and you can change it.\" <br> - Steve Jobs",
+					"\"Most people settle for what they think they are capable of. <br> But if you don’t overestimate yourself, you will never <br> uncover what you are really capable of.\"",
+					"\"Time is precious. Get moving.\""
+					];
+		var randomIndex = Math.floor(Math.random() * quotes.length);
+		x.innerHTML = quotes[randomIndex];
+	}
 	</script>
 
 </body>
