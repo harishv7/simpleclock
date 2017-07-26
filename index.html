@@ -1,79 +1,80 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="http://v4.pingendo.com/assets/bootstrap/themes/default.css" rel="stylesheet" type="text/css">
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://v4.pingendo.com/assets/bootstrap/themes/default.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
 </head>
 
 <body onload="start()">
-	  <div class="bg-danger section section-fill-height text-xs-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h1 class="display-1 pi-draggable pi-item title text-inverse" draggable="true" id="time">COLOR COVER</h1>
-					<p class="lead pi-draggable pi-item subtitle text-inverse" id="quotes">Time is precious. Get Moving.</p>
-					<style>
-					.title, .subtitle {
-						font-family: "Lato", Helvetica, sans-serif;
-						font-weight: 100;
-					}
-					</style>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-	<script type="text/javascript">
-	var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-	var quotes = [
-					"\"Silence the angry man with love. Silence the liar with truth.\" <br> - Buddha",
-					"\"The only thing standing between you and your goal is <br> the story you keep telling yourself as to why you can't achieve it.\" <br> - Jordan Belfort",
-					"\"Most people quit because they look how far they have to go, <br> not how far they have come.\"",
-					"\"Everything around you that you call life was made up by people, and you can change it.\" <br> - Steve Jobs",
-					"\"Most people settle for what they think they are capable of. <br> But if you don’t overestimate yourself, you will never <br> uncover what you are really capable of.\"",
-					"\"Time is precious. Get moving.\"",
-					"\"I am the greatest, I said that even before I knew I was.\" <br> - Muhammad Ali",
-					"\"Float like a butterfly, sting like a bee.\" <br> - Muhammad Ali",
-					"\"Impossible is not a fact. It's an opinion.\" <br> - Muhammad Ali",
-					"\"If your dreams don't scare you, they aren't big enough.\" <br> - Muhammad Ali",
-					"\"Work Hard. Dream Big.\"",
-					"\"A man is but the product of his thoughts what he thinks, he becomes.\" <br> - Mahatma Ghandi"
-					];
-	function start() {
-		var y = document.getElementById("quotes");
-		var randomIndex = Math.floor(Math.random() * quotes.length);
-		y.innerHTML = quotes[randomIndex];
-		startTime();
-	}
+    <div class="bg-danger section section-fill-height text-xs-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="display-1 pi-draggable pi-item title text-inverse" draggable="true" id="time">COLOR COVER</h1>
+                    <p class="lead pi-draggable pi-item subtitle text-inverse" id="quotes">Time is precious. Get Moving.</p>
+                    <style>
+                        .title,
+                        .subtitle {
+                            font-family: "Lato", Helvetica, sans-serif;
+                            font-weight: 100;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var quotes = [
+            "\"Silence the angry man with love. Silence the liar with truth.\" <br> - Buddha",
+            "\"The only thing standing between you and your goal is <br> the story you keep telling yourself as to why you can't achieve it.\" <br> - Jordan Belfort",
+            "\"Most people quit because they look how far they have to go, <br> not how far they have come.\"",
+            "\"Everything around you that you call life was made up by people, and you can change it.\" <br> - Steve Jobs",
+            "\"Most people settle for what they think they are capable of. <br> But if you don’t overestimate yourself, you will never <br> uncover what you are really capable of.\"",
+            "\"Time is precious. Get moving.\"",
+            "\"I am the greatest, I said that even before I knew I was.\" <br> - Muhammad Ali",
+            "\"Float like a butterfly, sting like a bee.\" <br> - Muhammad Ali",
+            "\"Impossible is not a fact. It's an opinion.\" <br> - Muhammad Ali",
+            "\"If your dreams don't scare you, they aren't big enough.\" <br> - Muhammad Ali",
+            "\"Work Hard. Dream Big.\"",
+            "\"A man is but the product of his thoughts what he thinks, he becomes.\" <br> - Mahatma Ghandi"
+        ];
 
-	function startTime() {
-		var d = new Date();
+        function start() {
+            var y = document.getElementById("quotes");
+            var randomIndex = Math.floor(Math.random() * quotes.length);
+            y.innerHTML = quotes[randomIndex];
+            startTime();
+        }
 
-		var day = days[d.getDay()];
-		var hr = d.getHours();
-		var min = d.getMinutes();
-		var sec = d.getSeconds();
-		if (min < 10) {
-			min = "0" + min;
-		}
-		if(sec < 10) {
-			sec = "0" + sec;
-		}
-		var ampm = hr < 12 ? "am" : "pm";
-		var date = d.getDate();
-		var month = months[d.getMonth()];
-		var year = d.getFullYear();
-		var x = document.getElementById("time");
-		x.innerHTML = day + " " + hr + ":" + min + ":" + sec +  " " + ampm;
-		var t = setTimeout(startTime, 500);
-	}
+        function startTime() {
+            var d = new Date();
 
-	</script>
+            var day = days[d.getDay()];
+            var hr = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+            if (min < 10) {
+                min = "0" + min;
+            }
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+            var ampm = hr < 12 ? "am" : "pm";
+            var date = d.getDate();
+            var month = months[d.getMonth()];
+            var year = d.getFullYear();
+            var x = document.getElementById("time");
+            x.innerHTML = day + " " + hr + ":" + min + ":" + sec + " " + ampm;
+            var t = setTimeout(startTime, 500);
+        }
+    </script>
 
 </body>
 
